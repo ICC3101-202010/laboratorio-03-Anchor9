@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab3
 {
-    public class Client : Persona
+    public class Client : Person
     {
         private string id_voucher;
         

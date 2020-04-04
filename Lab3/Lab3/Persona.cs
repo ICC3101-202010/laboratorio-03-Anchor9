@@ -6,26 +6,38 @@ using System.Threading.Tasks;
 
 namespace Lab3
 {
-    public class Persona
+    public abstract class Person
     {
-        private string name;
-        private string lastName;
-        private int rut;
-        private string nationality;
+        protected string name;
+        protected string lastName;
+        protected int rut;
+        protected string nationality;
+        protected string type;
 
 
-        public Persona(string Name, string Lastname, string Nationality, int Rut)
+        public Person()
         {
-            name = Name;
-            lastName = Lastname;
-            nationality = Nationality;
-            rut = Rut;
+
 
         }
         public string Name { get => name; set => name = value; }
         public int Rut { get => rut; set => rut = value; }
         public string Nationality { get => nationality; set => nationality = value; }
         public string Lastname { get => lastName; set => lastName = value; }
+        public string Type { get => type; set => type = value; }
+
+
+        public void ChangePosition(Person persona)
+        {
+            string new_position = persona.Type;
+
+            Console.WriteLine("Choose a new position to" + persona.name);
+            Console.WriteLine("[1]Boss \n[2]Client \n[3]");
+
+
+
+
+        }
 
     }
 }

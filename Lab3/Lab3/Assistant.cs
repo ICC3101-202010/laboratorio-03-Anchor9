@@ -25,6 +25,9 @@ namespace Lab3
         public string Schedule { get => schedule; set => schedule = value; }
 
 
+
+
+
     }
    
 
