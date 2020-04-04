@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace Lab3
 {
-    public class supervisor
+    public class supervisor : Persona
     {
         public string sector;
+        private int salary;
+        private string schedule;
+
     }
 }

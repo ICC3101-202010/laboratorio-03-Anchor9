@@ -12,5 +12,8 @@ namespace Lab3
         private string buyer;
         private DateTime date;
         private int amount;
+
+
+
     }
 }
