@@ -13,7 +13,29 @@ namespace Lab3
         private DateTime date;
         private int amount;
 
+        public string Id { get => id; set => id = value; }
+        public string Buyer { get => buyer; set => buyer = value; }
+        public DateTime Date { get => date; set => date = value; }
+        public int Amount { get => amount; set => amount = value; }
+
+
+        public string ShowVoucherInfo(Boleta boleta)
+        {
+            string info = "ID:" + boleta.Id + "PURCHASER:" + boleta.buyer + "DATE:" + boleta.buyer + "AMOUNT:" + boleta.amount;
+            return info;
+
+        }
+
+
+
+
+
+
+
+
+
 
 
     }
+
 }

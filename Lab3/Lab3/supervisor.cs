@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab3
 {
-    public class supervisor : Persona
+    public class supervisor : Person
     {
         public string sector;
         private int salary;
