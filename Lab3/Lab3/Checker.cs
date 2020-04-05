@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab3
 {
-    public class Employee
+    public class Checker
     {
 
 

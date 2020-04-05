@@ -47,7 +47,7 @@
     <Compile Include="Boleta.cs" />
     <Compile Include="chief.cs" />
     <Compile Include="Client.cs" />
-    <Compile Include=".cs" />
+    <Compile Include="Checker.cs" />
     <Compile Include="Persona.cs" />
     <Compile Include="Producto.cs" />
     <Compile Include="Program.cs" />

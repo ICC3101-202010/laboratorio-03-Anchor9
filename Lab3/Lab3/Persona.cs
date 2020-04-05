@@ -27,6 +27,7 @@ namespace Lab3
         public string Type { get => type; set => type = value; }
 
 
+
         public void ChangePosition(Person persona)
         {
             Console.WriteLine("Choose a new position to" + persona.name);
@@ -54,10 +55,22 @@ namespace Lab3
                 persona.type = "Supermarket";
             }
 
+        }
+        public void ChangeSalary(Person persona)
+
+        {
+
+        }
+
+        public void ShowPersonInfo(Person persona)
+
+        {
 
 
+        }
 
-
+        public void PersonList()
+        {
 
 
         }
