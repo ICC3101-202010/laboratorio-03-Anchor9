@@ -24,10 +24,9 @@ namespace Lab3
             nationality = Nationality;
             rut = Rut;
             type = Type;
-
-
-
-
+        }
+        public chief()
+        {
 
         }
         public string Position { get => position; set => position = value; }
@@ -38,7 +37,7 @@ namespace Lab3
 
         public void ChiefsInfo()
         {
-            chief Sam = new chief("Marketing", 1000000, "9:00-18:00", "Sam", "Drinkwater", "English", 169087631, "Chief");
+            chief Sam = new chief("Marketing", 1000000, "9:00-18:00", "Sam", "Drinkwater", "England", 169087631, "Chief");
             chief Mumad = new chief("production", 1000000, "9:00-18:00", "Munahid", "Albaan", "Lebanon", 125546753, "Chief");
             chief Clarie = new chief("Finances", 2500000, "9:00-18:00", "Clarie", "Kutarnic", "Croatia", 179092657, "Chief");
 
@@ -51,7 +50,7 @@ namespace Lab3
         {
             foreach (var chief in Chiefs)
             {
-                Console.WriteLine("POSITION:" + chief.Position + "||" + "SALARY:" + chief.Salary + "||" + "SHCEDULE:" + chief.Schedule + "||" + "NAME: " + chief.Name + chief.Lastname + "||" + "NATIONALITY" + chief.Nationality + "||" + "RUT" + chief.rut + "||" + "TYPE" + chief.Type);
+                Console.WriteLine("POSITION: " + chief.Position + "||" + "SALARY: " + chief.Salary + "||" + "SHCEDULE: " + chief.Schedule + "||" + "NAME: " + chief.Name + " " + chief.Lastname + "||" + "NATIONALITY: " + chief.Nationality + "||" + "RUT: " + chief.rut + "||" + "TYPE: " + chief.Type);
             }
 
 
