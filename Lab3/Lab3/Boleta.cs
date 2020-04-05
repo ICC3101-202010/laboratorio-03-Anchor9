@@ -12,11 +12,14 @@ namespace Lab3
         private string buyer;
         private DateTime date;
         private int amount;
+        private List<Boleta> voucher_list;
 
         public string Id { get => id; set => id = value; }
         public string Buyer { get => buyer; set => buyer = value; }
         public DateTime Date { get => date; set => date = value; }
         public int Amount { get => amount; set => amount = value; }
+
+        public List<Boleta> Voucher_List { get => voucher_list; set => voucher_list = value; }
 
 
         public string ShowVoucherInfo(Boleta boleta)
@@ -25,6 +28,7 @@ namespace Lab3
             return info;
 
         }
+
 
 
 

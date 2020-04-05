@@ -37,7 +37,14 @@ namespace Lab3
 
         public List<Producto> Market = new List<Producto>();
 
-        public void MarketList()
+        public void ShowProductInfo()
+        {
+            foreach (var product in Market)
+            {
+                Console.WriteLine("NAME:" + product.Name + "||" + "STOCK:" + product.stock + "||"  + "BRAND:" + product.brand + "||"  + "PRICE: $" + product.price + "\n");
+            }
+        }
+       public void MarketList()
         {
             //Products by defect
 
@@ -53,23 +60,32 @@ namespace Lab3
             Producto Muffin = new Producto("Muffin", 15, "Marinela", 900);              //10
             Producto Bread = new Producto("Bread", 20, "Bimbo", 1200);                  //11
             Producto Rice = new Producto("Rice", 15, "Tucapel", 600);                   //12
-            Producto TV = new Producto("Smart TV", 3, "LG", 4000000);                  //13
-            Producto Egss = new Producto("Happy Eggs", 30, "Farm", 3000);               //14
+            Producto TV = new Producto("Smart TV", 3, "LG", 4000000);                   //13
+            Producto Eggs = new Producto("Happy Eggs", 30, "Farm", 3000);               //14
             Producto Sugar = new Producto("Sugar", 10, "Iansa", 400);                   //15
             Producto Bateries = new Producto("Alcalines", 10, "Duracell", 1500);        //16
             Producto Book = new Producto("Notebook", 10, "Torre", 1000);                //17
-            
+
             Market.Add(Chips);
-            foreach (var product in Market)
-            {
-                Console.WriteLine(product.Name + product.brand);
-            }
-
-
+            Market.Add(Yogurt);
+            Market.Add(Coffe);
+            Market.Add(Water);
+            Market.Add(Soda);
+            Market.Add(Noodle);
+            Market.Add(Tea);
+            Market.Add(Shampoo);
+            Market.Add(Cheese);
+            Market.Add(Muffin);
+            Market.Add(Bread);
+            Market.Add(Rice);
+            Market.Add(TV);
+            Market.Add(Eggs);
+            Market.Add(Sugar);
+            Market.Add(Bateries);
+            Market.Add(Book);
         }
 
-
-        public void ShopList(Producto producto)
+       public void ShopList(Producto producto)
         {
             string new_name = producto.Name;
             int new_stock = producto.Stock;
@@ -80,6 +96,8 @@ namespace Lab3
             shoppingCart.Add(new Producto(new_name, new_stock, new_brand, new_price));
 
         }
+
+
 
 
 
