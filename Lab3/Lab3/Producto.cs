@@ -99,11 +99,49 @@ namespace Lab3
 
 
 
+        public void BUY()
+        {
+            while (true)
+            {
+                int sku = 1;
+                foreach (var product in Market)
+                {
+                    Console.WriteLine("[" + sku + "] NAME:" + product.Name + "||" + "STOCK:" + product.stock + "||" + "BRAND:" + product.brand + "||" + "PRICE: $" + product.price + "\n");
+                    sku++;
+
+                }
+                Console.WriteLine("Select product");
+                string sku_chosen_prev = Console.ReadLine();
+                int sku_chosen = Convert.ToInt32(sku_chosen_prev);
+
+                Console.WriteLine("Choose quantity");
+                string quantity_prev = Console.ReadLine();
+                int quantity = Convert.ToInt32(quantity_prev);
+
+                
+
+                
+
+                Console.WriteLine("Keep buying? \n[1] YES \n[2] NO");
+                string choice = Console.ReadLine();
+                if (choice == "1")
+                    continue;
+                else 
+                {
+                    break;
+                }
+            }
+
+        }
+    }
+
+
+
 
 
 
  
             
 
-    }
+    
 }

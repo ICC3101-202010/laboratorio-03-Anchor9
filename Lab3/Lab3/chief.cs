@@ -52,9 +52,6 @@ namespace Lab3
             {
                 Console.WriteLine("POSITION: " + chief.Position + "||" + "SALARY: " + chief.Salary + "||" + "SHCEDULE: " + chief.Schedule + "||" + "NAME: " + chief.Name + " " + chief.Lastname + "||" + "NATIONALITY: " + chief.Nationality + "||" + "RUT: " + chief.rut + "||" + "TYPE: " + chief.Type);
             }
-
-
-
         }
 
         public void AddChief(Person person)

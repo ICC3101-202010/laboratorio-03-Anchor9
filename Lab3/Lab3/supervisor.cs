@@ -24,7 +24,10 @@ namespace Lab3
             rut = Rut;
             type = Type;
         }
+        public supervisor()
+        {
 
+        }
 
         public string Sector { get => sector; set => sector = value; }
         public int Salary { get => salary; set => salary = value; }
@@ -34,17 +37,17 @@ namespace Lab3
 
         public void SupervisorInfo()
         {
-            supervisor Sam = new supervisor("A1", 500000, "9:00-18:00", "Klrak", "Drinkwater", "E", 169087631, "Supervisor");
-            supervisor Mumad = new supervisor("C4", 600000, "9:00-18:00", "Camila", "Albaan", "Panama", 125546753, "Supervisorf");
-            supervisor Clarie = new supervisor("L7", 450000, "9:00-18:00", "Eugenia", "Kutarnic", "Colombia", 179092657, "Supervisor");
+            supervisor Nethan = new supervisor("Food", 700000, "9:00-18:00", "Nethan", "Swersch", "Sweeden", 163567631, "Supervisor");
+            supervisor Camila = new supervisor("Technology", 650000, "9:00-18:00", "Camila", "Lartues", "Panama", 112034943, "Supervisorf");
+            supervisor Eugenia = new supervisor("Home&Deco", 800000, "9:00-18:00", "Eugenia", "Montes", "Colombia", 117888982, "Supervisor");
 
-            Supervisors.Add(Sam);
-            Supervisors.Add(Sam);
-            Supervisors.Add(Sam);
+            Supervisors.Add(Nethan);
+            Supervisors.Add(Camila);
+            Supervisors.Add(Eugenia);
 
 
         }
-        public void ShowChiefInfo()
+        public void ShowSupervisorInfo()
         {
             foreach (var supervisor in Supervisors)
             {
