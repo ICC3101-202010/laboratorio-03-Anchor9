@@ -37,6 +37,8 @@ namespace Lab3
 
         public List<Producto> Market = new List<Producto>();
 
+        
+
         public void ShowProductInfo()
         {
             foreach (var product in Market)
@@ -85,15 +87,20 @@ namespace Lab3
             Market.Add(Book);
         }
 
-       public void ShopList(Producto producto)
+       public void ShopList(Producto producto, int cantidad)
         {
             string new_name = producto.Name;
-            int new_stock = producto.Stock;
+            int new_stock = cantidad;
             int new_price = producto.Price;
             string new_brand = producto.Brand;
 
             List<Producto> shoppingCart = new List<Producto>();
             shoppingCart.Add(new Producto(new_name, new_stock, new_brand, new_price));
+
+            foreach (var product in shoppingCart)
+            {
+                Console.WriteLine(" NAME:" + new_name + "||" + "STOCK:" + new_stock + "||" + "BRAND:" + new_brand + "||" + "PRICE: " + new_price + "BRAND: " + new_brand);
+            }    
 
         }
 
@@ -118,16 +125,31 @@ namespace Lab3
                 string quantity_prev = Console.ReadLine();
                 int quantity = Convert.ToInt32(quantity_prev);
 
-                
+                int sku_compare = 1;
+                foreach (var product in Market)
+                {
+                    
+                    if (sku_compare == sku_chosen)
+                    {
+                        ShopList(product, quantity);
+                        product.stock = product.stock - quantity;
+                        sku_compare++;
+                    } 
+                    else
+                    {
+                        sku_compare ++;
+                    }
+                }
 
-                
 
                 Console.WriteLine("Keep buying? \n[1] YES \n[2] NO");
                 string choice = Console.ReadLine();
                 if (choice == "1")
+                    
                     continue;
                 else 
                 {
+
                     break;
                 }
             }

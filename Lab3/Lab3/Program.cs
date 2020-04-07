@@ -41,6 +41,8 @@ namespace Lab3
             Producto MART = new Producto();
             chief chiefs = new chief();
             Client client = new Client();
+            Boleta boleta = new Boleta();
+            
 
             client.ClientInfo();
             assistant.AssistantInfo();

@@ -23,6 +23,21 @@ namespace Lab3
 
         public List<Boleta> Voucher_List { get => voucher_list; set => voucher_list = value; }
 
+        public Boleta()
+        {
+
+        }
+
+        public Boleta(string Id, string Buyer, DateTime Date, int Amount, string Checker) 
+        {
+            id = Id;
+            buyer = Buyer;
+            date = Date;
+            amount = Amount;
+            checker = Checker;
+        
+        
+        }
 
         public void ShowVoucherInfo(Boleta boleta)
         {
