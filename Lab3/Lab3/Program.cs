@@ -54,7 +54,7 @@ namespace Lab3
                 Console.WriteLine("Main menu, choose an option\n");
                 Console.WriteLine("[1]Show product list \n[2]Show employee info \n[3]Purchase \n[4]See purchases \n[5]Options \n[0]EXIT");
                 string mode2 = Console.ReadLine();
-                while (mode2 != "1" && mode2 != "2" && mode2 != "3" && mode2 != "4" && mode2 != "4" && mode2 != "5")
+                while (mode2 != "1" && mode2 != "2" && mode2 != "3" && mode2 != "4" && mode2 != "4" && mode2 != "5" && mode2 != "0")
                 {
                     Console.WriteLine("ERROR, choose a correct option");
                     mode2 = Console.ReadLine();
@@ -140,12 +140,17 @@ namespace Lab3
                 }
                 else if (mode2 == "5") //OPTIONS
                 {
-
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    Console.WriteLine("Change person parameters");
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine("[1] Client \n[2] Chief \n[3] Supervisor \n[4] Checker \n[5] Assistant \n[0] EXIT");
+                    string person = Console.ReadLine();
                 }
+
 
                 else if (mode2 == "0") //EXIT
                 {
-                    continue;
+                    break;
                 }
 
 
