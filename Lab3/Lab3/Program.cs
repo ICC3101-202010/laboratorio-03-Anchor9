@@ -15,6 +15,7 @@ namespace Lab3
 
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("Choose an option \n[1] Manual\n[2] Simulation\n");
+            // SIN IMPLEMETAR LA SIMULACION
             Console.ForegroundColor = ConsoleColor.White;
             string mode = Console.ReadLine();
 
