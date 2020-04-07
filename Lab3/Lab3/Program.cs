@@ -42,7 +42,9 @@ namespace Lab3
             chief chiefs = new chief();
             Client client = new Client();
             Boleta boleta = new Boleta();
-            
+
+            List<int> unic_ID = new List<int>();
+            List<Boleta> voucher_list = new List<Boleta>();
 
             client.ClientInfo();
             assistant.AssistantInfo();
@@ -72,22 +74,22 @@ namespace Lab3
                 {
                     Console.WriteLine("[1]Chief \n[2]Assistant \n[3]Supervisor \n[4]Checker \n[0]EXIT");
                     string mode3 = Console.ReadLine();
-                    
+
                     if (mode3 == "1") //CHIEF
                     {
                         chiefs.ShowChiefInfo();
                         continue;
                     }
-                    else if(mode3 == "2") //ASSISTANT
+                    else if (mode3 == "2") //ASSISTANT
                     {
                         assistant.ShowAsisstantInfo();
                     }
-                    else if(mode3 == "3") //SUPERVISOR
+                    else if (mode3 == "3") //SUPERVISOR
                     {
                         supervisor.ShowSupervisorInfo();
 
                     }
-                    else if(mode3 =="4") // CHECKER
+                    else if (mode3 == "4") // CHECKER
                     {
                         checker.ShowCheckerInfo();
                     }
@@ -98,12 +100,51 @@ namespace Lab3
 
 
                 }
-                else if(mode2 == "3") //PURCHASE
+                else if (mode2 == "3") //PURCHASE
                 {
+
                     Console.WriteLine("Choose a client");
-                    //client.ShowClientName();
-                    //string client_chosen = Console.ReadLine();
+                    client.ShowClientName();
+                    string client_chosen = Console.ReadLine();
+                    List<Producto> shoppingCart = new List<Producto>();
                     
+                    // B U Y
+                    MART.BUY(shoppingCart);
+
+                    Console.WriteLine("Choose a cheker");
+                    checker.ShowCheckerName();
+                    string checker_chosen = Console.ReadLine();
+
+
+                    //GENERATING VOUCHER
+                    DateTime start = new DateTime(2020, 1, 1);
+                    int range = (DateTime.Today - start).Days;
+
+                    Random random = new Random();
+                    string checker_Name;
+                    int total = MART.Total_Amount(shoppingCart);
+                    
+                    int ID = random.Next(1000, 9999);
+                    while (unic_ID.Contains(ID))
+                    {
+                        ID = random.Next(1000, 9999);
+                    }
+                    checker_Name = checker.SelectChecker(checker_chosen);
+                    DateTime buyDate = start.AddDays(random.Next(range));
+                    string strID = Convert.ToString(ID);
+
+                    Boleta new_voucher = new Boleta(strID, client_chosen, buyDate, total, checker_Name);
+                    
+                     
+                    //COMPRA CASI LISTAAAAAA OMG
+
+
+
+
+
+
+
+
 
                 }
 

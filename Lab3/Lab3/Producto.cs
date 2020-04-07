@@ -87,14 +87,14 @@ namespace Lab3
             Market.Add(Book);
         }
 
-       public void ShopList(Producto producto, int cantidad)
+       public void ShopList(Producto producto, int cantidad, List<Producto> products)
         {
             string new_name = producto.Name;
             int new_stock = cantidad;
             int new_price = producto.Price;
             string new_brand = producto.Brand;
 
-            List<Producto> shoppingCart = new List<Producto>();
+            List<Producto> shoppingCart = products; 
             shoppingCart.Add(new Producto(new_name, new_stock, new_brand, new_price));
 
             foreach (var product in shoppingCart)
@@ -106,7 +106,7 @@ namespace Lab3
 
 
 
-        public void BUY()
+        public void BUY(List<Producto> shoplist)
         {
             while (true)
             {
@@ -131,7 +131,7 @@ namespace Lab3
                     
                     if (sku_compare == sku_chosen)
                     {
-                        ShopList(product, quantity);
+                        ShopList(product, quantity, shoplist);
                         product.stock = product.stock - quantity;
                         sku_compare++;
                     } 
@@ -145,15 +145,27 @@ namespace Lab3
                 Console.WriteLine("Keep buying? \n[1] YES \n[2] NO");
                 string choice = Console.ReadLine();
                 if (choice == "1")
-                    
+                {
+                    Console.WriteLine("Your shop cart");
+                    foreach (var product in shoplist)
+                        Console.WriteLine("NAME:" + product.Name + "||" + "STOCK:" + product.stock + "||" + "BRAND:" + product.brand + "||" + "PRICE: $" + product.price + "\n");
                     continue;
-                else 
+                }
+                else
                 {
 
                     break;
                 }
             }
 
+        }
+        public int Total_Amount(List<Producto> shoplist)
+        {
+            int total = 0;
+
+            foreach (var product in shoplist)
+                total = total + product.Price;
+            return total;
         }
     }
 

@@ -63,9 +63,10 @@ namespace Lab3
         }
         public void ShowClientName()
         {
+            int count = 1;
             foreach (var client in Clients)
-                Console.WriteLine("NAME: " + client.Name);
-
+                
+                Console.WriteLine("["+count+"]NAME: " + client.Name, count ++);
 
         }
 

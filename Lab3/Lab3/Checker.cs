@@ -61,5 +61,30 @@ namespace Lab3
 
         }
 
+        public void ShowCheckerName()
+        {
+            foreach (var checker in Checkers)
+                Console.WriteLine("NAME: " + checker.Name);
+
+        }
+        public string SelectChecker(string selection)
+        {
+            string selected_checker = "";
+            int selection_final = Convert.ToInt32(selection);
+            int counter = 0;
+            foreach (var checker in Checkers)
+                if (counter == selection_final)
+                {
+                    selected_checker = checker.Name;
+                    counter++;
+                }
+                else
+                {
+                    counter++;
+                }
+            return selected_checker;
+                
+
+        }
     }
 }
