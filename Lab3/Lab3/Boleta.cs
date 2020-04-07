@@ -44,6 +44,18 @@ namespace Lab3
             Console.WriteLine("ID:" + boleta.Id + "PURCHASER:" + boleta.buyer + "DATE:" + boleta.buyer + "AMOUNT:" + boleta.amount + "CHECKER:" + boleta.checker);
             
         }
+        public void ShowPurchases(List<Boleta> purchases)
+        {
+            foreach (var voucher in purchases)
+            {
+                ShowVoucherInfo(voucher);
+            }
+        }
+        public void ADDvoucher(List<Boleta> voucher_list, Boleta boleta)
+        {
+            voucher_list.Add(boleta);
+
+        }
 
 
 

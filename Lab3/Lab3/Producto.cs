@@ -97,10 +97,10 @@ namespace Lab3
             List<Producto> shoppingCart = products; 
             shoppingCart.Add(new Producto(new_name, new_stock, new_brand, new_price));
 
-            foreach (var product in shoppingCart)
-            {
-                Console.WriteLine(" NAME:" + new_name + "||" + "STOCK:" + new_stock + "||" + "BRAND:" + new_brand + "||" + "PRICE: " + new_price + "BRAND: " + new_brand);
-            }    
+
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine("NAME:" + new_name + "||" + "QUANTITY:" + new_stock + "||" + "BRAND:" + new_brand + "||" + "PRICE: " + new_price + "||" + "BRAND: " + new_brand);
+            Console.ForegroundColor = ConsoleColor.White;
 
         }
 
@@ -117,11 +117,13 @@ namespace Lab3
                     sku++;
 
                 }
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("Select product");
                 string sku_chosen_prev = Console.ReadLine();
                 int sku_chosen = Convert.ToInt32(sku_chosen_prev);
 
                 Console.WriteLine("Choose quantity");
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 string quantity_prev = Console.ReadLine();
                 int quantity = Convert.ToInt32(quantity_prev);
 
@@ -141,15 +143,20 @@ namespace Lab3
                     }
                 }
 
-
+                Console.ForegroundColor = ConsoleColor.Yellow;
                 Console.WriteLine("Keep buying? \n[1] YES \n[2] NO");
+                Console.ForegroundColor = ConsoleColor.White;
                 string choice = Console.ReadLine();
                 if (choice == "1")
                 {
+                    Console.ForegroundColor = ConsoleColor.Green;
                     Console.WriteLine("Your shop cart");
+                    Console.ForegroundColor = ConsoleColor.Cyan;
                     foreach (var product in shoplist)
-                        Console.WriteLine("NAME:" + product.Name + "||" + "STOCK:" + product.stock + "||" + "BRAND:" + product.brand + "||" + "PRICE: $" + product.price + "\n");
+                        Console.WriteLine("NAME:" + product.Name + "||" + "QUANTITY:" + product.stock + "||" + "BRAND:" + product.brand + "||" + "PRICE: $" + product.price + "\n");
+                    Console.ForegroundColor = ConsoleColor.White;
                     continue;
+
                 }
                 else
                 {

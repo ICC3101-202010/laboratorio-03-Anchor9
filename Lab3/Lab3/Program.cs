@@ -10,8 +10,6 @@ namespace Lab3
     {
         static void Main(string[] args)
         {
-
-
             Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("W E L C O M E   T O    E - M A R T\n");
 
@@ -27,12 +25,8 @@ namespace Lab3
             }
             Console.ForegroundColor = ConsoleColor.Magenta;
 
-
-
-
-
             ////////////////////////////////////////////////////////////////
-            Console.WriteLine("Manual MODE");
+            Console.WriteLine("Manual MODE\n");
             Console.ForegroundColor = ConsoleColor.White;
             
             Checker checker = new Checker();
@@ -56,10 +50,11 @@ namespace Lab3
             /////////////////////////////////////////////////////////////////////////////
             while (true)
             {
-                Console.WriteLine("Main menu, choose an option");
-                Console.WriteLine("[1]Show product list \n[2]Show employee info \n[3]Purchase \n[4]Options \n[0]EXIT");
+                
+                Console.WriteLine("Main menu, choose an option\n");
+                Console.WriteLine("[1]Show product list \n[2]Show employee info \n[3]Purchase \n[4]See purchases \n[5]Options \n[0]EXIT");
                 string mode2 = Console.ReadLine();
-                while (mode2 != "1" && mode2 != "2" && mode2 != "3" && mode2 != "4" && mode2 != "4")
+                while (mode2 != "1" && mode2 != "2" && mode2 != "3" && mode2 != "4" && mode2 != "4" && mode2 != "5")
                 {
                     Console.WriteLine("ERROR, choose a correct option");
                     mode2 = Console.ReadLine();
@@ -98,7 +93,6 @@ namespace Lab3
                         continue;
                     }
 
-
                 }
                 else if (mode2 == "3") //PURCHASE
                 {
@@ -134,21 +128,17 @@ namespace Lab3
                     string strID = Convert.ToString(ID);
 
                     Boleta new_voucher = new Boleta(strID, client_chosen, buyDate, total, checker_Name);
-                    
-                     
-                    //COMPRA CASI LISTAAAAAA OMG
+                    boleta.ADDvoucher(voucher_list, new_voucher);
 
-
-
-
-
-
-
-
+                    Console.WriteLine("Thanks to visit US");
 
                 }
 
-                else if (mode2 == "4") //OPTIONS
+                else if (mode2 == "4") //SEE PURCHASES
+                {
+                    boleta.ShowPurchases(voucher_list);
+                }
+                else if (mode2 == "5") //OPTIONS
                 {
 
                 }
